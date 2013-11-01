@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ i18n.student.title }}</title>
+
+    {% include 'include.html' %}
+</head>
+<body>
+	
+	<div class="row">
+		<div class="col-span-12 head">
+		
+		{% include 'btnHome.html' %}
+		
+		<h2 align="center">{{ i18n.student.title }}</h2>
+		
+		</div>
+	
+	</div>
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Matricola</th>
+            <th>{{ i18n.student.lastname }}</th>
+            <th>{{ i18n.student.name }}</th>
+            <th>{{ i18n.student.bd }}</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for item in data %}
+
+        <tr>
+            <th><a href="{{ burl }}/{{ link }}/{{ item.matricola }}">{{ item.matricola }}</a></th>
+            <th>{{ item.cognome }}</th>
+            <th>{{ item.nome }}</th>
+            <th>{{ item.dataNascita }}</th>
+        </tr>
+
+        {% else %}
+        <tr>
+            <td>Non ci sono studenti.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% include 'footer.html' %}
+</body>
+</html>

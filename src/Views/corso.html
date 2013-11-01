@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ i18n.corso.title }}</title>
+
+    {% include 'include.html' %}
+</head>
+<body>
+
+	<div class="row">
+		<div class="col-span-12 head">
+		
+		{% include 'btnHome.html' %}
+		
+		<h2 align="center">{{ i18n.course.head }}</h2>
+		
+		</div>
+	
+	</div>
+
+
+    <table class="table table-striped">
+        <caption><h3>{{ i18n.corso.title }}</h3></caption>
+        <thead>
+        <tr>
+            <th>{{ i18n.course.name }}</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for item in data %}
+
+        <tr>
+                <td><a href="{{ burl }}/corso/{{ item.idCorso }}">{{ item.titolo }}</a></td>
+        </tr>
+
+        {% else %}
+        <tr>
+            <td>Non ci sono corsi.</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    {% include 'footer.html' %}
+</body>
+</html>

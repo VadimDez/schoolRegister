@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+
+i
+{
+	color:  #ffffff;
+}
+	
+.head {
+	background-color: rgba(0,0,0,0.5);
+	color: #ffffff;
+	margin-bottom: 10px;
+}
+
+.home {
+	margin-top:15px;
+}
+
+.hero {
+	
+	margin: 10px;
+	
+}
+
+.hero h1 {
+	text-align: center;
+	font-size: 90px;
+}
+
+.ln {
+    height: 1px;
+    background-color: #000;
+}
+
+.footer {
+    margin-top: 15px;
+    font-size: 13px;
+    color: lightslategrey;
+}

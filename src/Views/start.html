@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ i18n.start.title }}</title>
+
+    {% include 'include.html' %}
+</head>
+<body>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="span6 offset3">
+                <div class="jumbotron hero">
+                    <h1><b>SCUOLA</b></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row-fluid">
+        <div class="span12"style="text-align:center;">
+            <div class="row-fluid span8 offset2"  >
+                <a class="btn btn-info" href="{{ burl }}/class"><b>Classe-Corsi</b></a>
+                <a class="btn btn-success" href="{{ burl }}/studentcourses"><b>Studente-Corso</b></a>
+                <a class="btn btn-default" href="{{ burl }}/anno"><b>Anno-Corsi-Studenti</b></a>
+                <a class="btn btn-warning" href="{{ burl }}/corso"><b>Info Corso</b></a>
+                <a class="btn btn-danger" href="{{ burl }}/classes"><b>Info Studente</b></a>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span5 offset5">
+            <div class="span2">
+                <hr/>
+            </div>
+            <div class="span1" style="padding-top:10px">
+                {{ i18n.start.or }}
+            </div>
+            <div class="span2">
+                <hr/>
+            </div>
+
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="span6 offset3">
+                <form class="form-inline">
+                    <fieldset>
+                        <input type="text" class="span9" placeholder="{{ i18n.start.search }}..."/>
+                        <input type="submit" class="btn btn-inverse span3" value="{{ i18n.start.search }}"/>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</div>
+
+</body>
+</html>

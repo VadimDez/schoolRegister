@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ i18n.course.title }}</title>
+
+    {% include 'include.html' %}
+</head>
+<body>
+
+<div class="row">
+		<div class="col-span-12 head">
+		
+		{% include 'btnHome.html' %}
+		
+		<h2 align="center">{{ i18n.course.head }}</h2>
+		
+		</div>
+	
+	</div>
+
+<table class="table table-striped">
+
+    <caption><h3>{{ i18n.corso.title }}</h3></caption>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Titolo</th>
+        <th>tipo</th>
+        <th>Monte ore</th>
+        <th>Anno scloastico</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for item in data %}
+    <tr>
+        <th><a href="{{ burl }}/anno/{{ item.idCorso }}">{{ item.idCorso }}</a></th>
+        <th>{{ item.titolo }}</th>
+        <th>{{ item.tipologia }}</th>
+        <th>{{ item.monteOre }}</th>
+        <th>{{ item.annoScolastico }}</th>
+    </tr>
+
+    {% else %}
+    <tr>
+        <th>Non ci sono corsi.</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ i18n.class.title }}</title>
+
+    {% include 'include.html' %}
+</head>
+<body>
+
+	<div class="row head">
+		<div class="col-span-12">
+		
+		{% include 'btnHome.html' %}
+		
+		<h1 align="center">{{ i18n.class.title }}</h1>
+
+		</div>
+        <div class="col-span-12 ln">
+        </div>
+	</div>
+
+	<div class="row">
+		<div class="col-span-12">
+		    {% for item in data %}
+		        <a href="{{ burl }}/{{ link }}/{{ item.idClasse }}" class="btn btn-info btn-large">{{ item.Classe }} {{ item.Sezione }}</a>
+		    {% endfor %}
+		</div>
+	</div>
+    {% include 'footer.html' %}
+</body>
+</html>

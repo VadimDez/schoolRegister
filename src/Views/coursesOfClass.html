@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ i18n.class.title }}</title>
+
+    {% include 'include.html' %}
+</head>
+<body>
+
+<div class="row">
+    <div class="col-span-12 head">
+
+        {% include 'btnHome.html' %}
+
+        <h2 align="center">{{ i18n.course.list }}</h2>
+
+    </div>
+
+</div>
+
+<table class="table table-striped">
+    <caption><h3>{{ i18n.course.caption }}</h3></caption>
+    <thead>
+    <tr>
+        <th>{{ i18n.class.serial }}</th>
+        <th>{{ i18n.student.lastname }}</th>
+        <th>{{ i18n.student.name }} </th>
+        <th>{{ i18n.course.nameCourse }}</th>
+        <th>{{ i18n.course.type }}</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for item in data %}
+
+    <tr>
+        <th><a href="{{ burl }}/students/{{ item.matricola }}">{{ item.matricola }}</a></th>
+        <th>{{ item.cognome }}</th>
+        <th>{{ item.nome }}</th>
+        <th>{{ item.titolo }}</th>
+        <th>{{ item.tipologia }}</th>
+    </tr>
+
+    {% else %}
+    <tr>
+        <th>Non ci sono studenti che fanno/hanno fatto i corsi.</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    {% endfor %}
+    </tbody>
+</table>
+{% include 'footer.html' %}
+</body>
+</html>
